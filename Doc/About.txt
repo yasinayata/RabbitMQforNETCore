@@ -1,0 +1,19 @@
+﻿Queue
+Doğrudan bir queue ya (Routingkey) mesaj gönderim.
+
+Direct Exchange
+Bu tipte, mesaj bir veya birden fazla queue’ya gidebilir. 
+Gidecek olan mesajın routing key değeri ile mesajı alacak olan kuyruğun binding key değerleri birbiriyle aynı olmalıdır.
+Exchange’e bind olan her kuyruğun dinlediği sadece bir key vardır. Bu yapı point-to-point veya message queue haberleşmeye imkan sağlamaktadır. 
+
+Fanout Exchange
+Producer tarafından gönderilen mesajların key bilgisine bakılmaksızın mesajlar exchange’e bind olan bütün kuyruklara gönderilmektedir. 
+
+Topic Exchange
+Bu türde wildcard desteği kullanılabilmekte. 
+Burada amaç bir mesajın key yapısına göre bir veya bir çok kuyruğa (ilgili) mesajın gönderilmesidir. 
+
+Header Exchange
+Bu yöntemde mesajın headers özelliğine bakılarak hangi kuyruğa yönlendirme yapılacağına karar verilir.
+Aslında Topic Exchange yapısına çok benzer. Key üzerinden eşleştirme yerine gönderilen mesajın header bilgisi üzerinden eşleşen key bilgisi var ise ilgili kuyruklara mesajları yönlendirmektedir. 
+Çok kullanışlı bir exchange türü değildir çünkü diğerlerine göre daha fazla efor gerektirir.
